@@ -1,0 +1,14 @@
+.welcom_home {
+    text-align: center;
+    margin: 10vh auto;
+}
+
+.welcom_home h1 {
+    font-size: 3em;
+}
+
+.play {
+    width: 100px;
+    margin: 20px auto;
+    text-align: center;
+}

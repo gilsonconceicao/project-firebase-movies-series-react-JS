@@ -1,0 +1,11 @@
+.info-user {
+    line-height: 2em;
+}
+
+.info-user p {
+    font-size: 20px;
+}
+
+.info-user h3 {
+    padding: 10px 0;
+}

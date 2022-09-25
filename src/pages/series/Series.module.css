@@ -1,0 +1,164 @@
+.container_series {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+.box_series img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.box_series {
+    width: 200px;
+    position: relative; 
+    margin: 20px;
+    padding: 10px;
+}
+
+.title_series {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title_series h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.title_series input {
+    background-color: #f8f5f5;
+    color: #1b1b1b;
+    box-shadow: 0 0 10px #0000003f;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    width: 250px;
+    margin: auto;
+    padding: 10px;
+}
+
+.numberLike {
+   background-color: #10e468;
+   color: #1b1b1b;
+   filter: drop-shadow(0 0 10px #17181879);
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 30px;
+   border-radius: 50%;
+   padding: 10px;
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+
+/* view serie components */
+
+.container_view {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+}
+
+.container_view article {
+    display: flex;
+}
+
+.localText {
+    color: #f8f5f5;
+    background-color: #1b1b1bd7;
+    position: relative;
+    padding: 20px;
+}
+
+.localText h3 {
+    color: #f1faf5;
+    font-size: 3em;
+}
+
+.popularity {
+    background-color: #edf1ef;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 80px;
+    color: #101111;
+    padding: 10px;
+}
+
+.overview {
+    font-size: 20px; 
+    padding: 10px 0;
+}
+
+.tagline {
+    color: #d3cdcdc2;
+    font-size: 24px;
+    margin: 10px 0 20px 0;
+}
+
+.image_poster {
+    height: 600px;
+}
+
+.reference {
+    background-color: #10e46842;
+    color: #f1faf5;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.btnSearch {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    margin: 0 10px ;
+}
+
+.btnBack {
+    display: block;
+    font-size: 30px;
+    margin: 10px 0;
+    color: #f1faf5;
+}
+
+.btnViewDetals {
+    text-decoration: none;
+    color: #101111;
+}
+
+
+
+@media screen and (max-width: 820px) {
+    .container_view article {
+        display: block;
+    }
+
+    .container_view {
+        height: 100%;
+    }
+
+    
+    .container_view h3 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .image_poster {
+        width: 100%;
+        height: 600px;
+    }
+    
+}
