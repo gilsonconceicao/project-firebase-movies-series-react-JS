@@ -93,7 +93,7 @@ export const AuthUserProvider = ({ children }) => {
     }
   }  
 
-  console.log(user); 
+  //console.log(user); 
 
   return (
     <authUserAccount.Provider value={

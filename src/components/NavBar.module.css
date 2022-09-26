@@ -1,6 +1,6 @@
 .navbar {
-    background-color: #1877F2;
-    color: #fff;
+    background-color: #27282b;
+    color: #10e468;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -24,20 +24,20 @@
 }
 
 .list_link_nav a:hover {
-    color: #fff;
+    color: #10e468;
 }
 
 .button_register a {
-    color: #f0f2f5;
-    border: 1px solid #f0f2f5;
+    color: #10e468;
+    border: 1px solid #10e468;
     border-radius: 5px;
     font-size: 17px;
     padding: 10px;
 }
 
 .button_register a:hover {
-    color: #1877F2;
-    background-color: #fff;
+    color: #fff;
+    background-color: #10e468a9;
 }
 
 .active {
@@ -48,6 +48,11 @@
 .isNot {
     color: #ffffff79;
 }
+
+.btnHome{
+    color: #ffffff79;
+}
+.btnHome:focus { color: #fff; text-decoration: underline; }
 
 .btnMenu {
     display: none;

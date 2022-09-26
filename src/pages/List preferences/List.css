@@ -9,7 +9,7 @@
 .title {
     display: flex;
     justify-content: space-between;
-
+    margin: 20px 0;
 }
 
 .list {
@@ -38,6 +38,15 @@
     padding: 4px;
     font-size: 16px;
     height: 100%;
+}
+
+.viewReplay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #00000013;
+    padding: 4px;
+    color: #222;
 }
 
 @media screen and (max-width: 700px) {

@@ -23,23 +23,27 @@ export const NavBar = () => {
                 (isActive ? styles.active : styles.isNot)} to='/movies'>Movies</NavLink >
               <NavLink className={({ isActive }) =>
                 (isActive ? styles.active : styles.isNot)} to='/list'>my list</NavLink >
+
             </li>
           </ul> :
           <ul className={styles['list_link_nav']}>
             <li>
-              <NavLink className={({ isActive }) =>
-                (isActive ? styles.active : styles.isNot)} to='/'>Home</NavLink >
+              <NavLink className={styles.btnHome} to='/'>Home</NavLink >
             </li>
             <li>
               <NavLink className={({ isActive }) =>
                 (isActive ? styles.active : styles.isNot)} to='/series'>Series</NavLink >
+            </li>
+            <li>
+              <NavLink className={({ isActive }) =>
+                (isActive ? styles.active : styles.isNot)} to='/movies'>Movies</NavLink >
             </li>
           </ul>
         }
       </div>
 
 
-      <button className={styles.btnMenu}><AiOutlineMenu/></button>  
+      <button className={styles.btnMenu}><AiOutlineMenu /></button>
       <span className={styles['button_register']}>
         {isLoggedAll === true ? <NavLink to='/register' title='Meu perfil'><BiUserCircle /></NavLink > : <NavLink to='/register'>Cadastrar/Entrar</NavLink >}
       </span>

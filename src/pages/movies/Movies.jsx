@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 import { UseAuthUserAccount } from '../../contexts/authStoreUser';
 import {RiPlayList2Fill} from 'react-icons/ri'; 
 
-import { SeriesListProvider, UseSeriesContext } from '../../contexts/seriesContext'
+import { UseMoviesContext } from '../../contexts/moviesContext'
 
-import styles from './SeriesAndMovies.module.css';
+import styles from '../series/SeriesAndMovies.module.css';
 
-const Series = () => {
+const Movies = () => {
   const [search, setSearch] = useState('');
   const [listSearch, setListSearch] = useState([]);
 
-  const { series, changeList, setChangeList } = UseSeriesContext();
+  const {movies, changeList, setChangeList } = UseMoviesContext();
   const { isLoggedAll } = UseAuthUserAccount();
 
   // function of search tv
-  const url = `https://api.themoviedb.org/3/search/tv?api_key=6faa5e90a21586090d2be6f3b012f543&language=en-US&page=1&query=${search}`;
+  const url = `https://api.themoviedb.org/3/search/movie/popular?api_key=6faa5e90a21586090d2be6f3b012f543&language=en-US&page=1&query=${search}`;
 
-  const handleGetSerieSearch = async (e) => {
+  const handleGetMovieSearch = async (e) => {
     e.preventDefault(); 
 
     try {
@@ -39,12 +39,12 @@ const Series = () => {
       <section >
         {isLoggedAll == true ?
           <div className={styles['title_series']}>
-            <h1 id='updateList'>Séries e novelas</h1>
-            <form onSubmit={handleGetSerieSearch} >
+            <h1 id='updateList'>Filmes e documentários</h1>
+            <form onSubmit={handleGetMovieSearch} >
                     <input
                         type="text"
                         onChange={(e) => setSearch(e.target.value)}
-                        placeholder='Buscar por uma série'
+                        placeholder='Buscar por um filme'
                     />
                     <button className={styles.btnSearch}><BsSearch/></button>
                 </form>
@@ -60,29 +60,29 @@ const Series = () => {
         {search.length > 0 ? 
         (
         <div className={styles.container_series}>
-          {listSearch.map(serie => (
-            <div key={serie.id} className={styles.box_series}>
-              <img src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} alt={serie.name} />
-              <h2 className={styles.titleBox}>{serie.name}</h2>
-              {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewserie/${serie.id}`}>
+          {listSearch.map(movie => (
+            <div key={movie.id} className={styles.box_series}>
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.name} />
+              <h2 className={styles.titleBox}>{movie.title}</h2>
+              {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewmovie/${movie.id}`}>
                 <RiPlayList2Fill/> Ver mais
               </Link>}
-              <p className={styles.numberLike}>{serie.vote_average}</p>
+              <p className={styles.numberLike}>{movie.vote_average}</p>
              
             </div>
           ))}
         </div>
         ) : (
           <div className={styles.container_series}>
-          {series.map(serie => (
-            <div key={serie.id} className={styles.box_series}>
-              <img src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} alt={serie.name} />
+          {movies.map(movie => (
+            <div key={movie.id} className={styles.box_series}>
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.name} />
               <div>
-                <h2 className={styles.titleBox}>{serie.name}</h2>
-                {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewserie/${serie.id}`}>
+                <h2 className={styles.titleBox}>{movie.title}</h2>
+                {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewmovie/${movie.id}`}>
                   <RiPlayList2Fill/> Ver mais
                 </Link>}
-                <p className={styles.numberLike}>{serie.vote_average}</p>
+                <p className={styles.numberLike}>{movie.vote_average}</p>
               </div>
              
             </div>
@@ -115,4 +115,4 @@ const Series = () => {
   )
 }
 
-export default Series
+export default Movies

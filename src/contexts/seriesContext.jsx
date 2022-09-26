@@ -1,7 +1,5 @@
-import { async } from "@firebase/util";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 export const seriesContext = React.createContext();
 
@@ -22,8 +20,6 @@ export const SeriesListProvider = ({ children }) => {
  
     }, [changeList])
 
-    console.log(series);
-    console.log(url)
 
     return (
         <seriesContext.Provider value={{series, setSeries, changeList, setChangeList}}>

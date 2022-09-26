@@ -28,9 +28,14 @@ export const Register = () => {
       return
     }
 
+    if (password.length < 6) {
+      setMsgErrror('A senha precisa ter 6 ou mais caracteres.'); 
+      return
+    }  
+
+    setMsgErrror('');
     if (displayName != '' && email != '' && password != '' && confirmPassword != '') {
       await getDataUserStore(displayName, email, password);
-      setMsgErrror('');
     } else {
       setMsgErrror('Preencha os dados por completo!');
     }
