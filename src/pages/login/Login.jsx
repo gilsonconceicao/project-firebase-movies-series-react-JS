@@ -6,6 +6,7 @@ import { UseAuthUserAccount } from '../../contexts/authStoreUser';
 
 import styles from './Login.module.css'
 import { Link } from 'react-router-dom';
+import { PerfilUser } from '../perfil/PerfilUser';
 
 export const LoginPage = () => {
   //state
@@ -16,7 +17,6 @@ export const LoginPage = () => {
   const [msgError, setMsgErrror] = useState('');
 
   // chacked email get data
-  const getShowInfo = JSON.parse(localStorage.getItem('@User-auth-doc-create'));
   const checkedPassWord = JSON.parse(localStorage.getItem('@User-auth-doc-create'));
 
   //auth firebase
@@ -69,57 +69,42 @@ export const LoginPage = () => {
   }
 
 
-  const handleLogOutUser = () => {
-    window.localStorage.removeItem("@Resgate-user-sigin");
-    window.location.href = ''; 
-  }
-
-
   return (
-    <div className='form_global'>
-      {isLoggedAll === true ?
-        <div className={styles['info-user']}>
-
-          <h1>Você está logado!</h1>
-          <h3>Olá, {getShowInfo.displayName}!</h3>
-
-          <p>E-mail: {getShowInfo.email}</p>
-
-          <button onClick={handleLogOutUser} style={{width: '100px', margin: '20px 0'}} className='button_global'>Sair</button>
-        </div>
-        :
-        <form onSubmit={handleValidDataPermission}>
-          <h1 style={{ fontSize: '2.3em', marginBottom: '20px' }}>Entrar com a sua conta</h1>
-          {/* get email */}
-          <label>
-            Email
-            <input
-              type="email"
-              name='email'
-              value={email}
-              required
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder='Digite o seu email'
-            />
-          </label>
-
-          {/* get password */}
-          <label>
-            Senha
-            <input
-              type="password"
-              name='password'
-              value={password}
-              required
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder='Digite uma senha'
-            />
-          </label>
-
-          {msgError && <p className='message_error'>{msgError}</p>}
-
-          <button className='button_global'>Entrar</button>
-        </form>}
+    <div className={styles.container_login}>
+      <div className='form_global'>
+        {isLoggedAll === true ?
+          <PerfilUser/>
+          :
+          <form onSubmit={handleValidDataPermission}>
+            <h1 style={{ fontSize: '2.3em', marginBottom: '20px' }}>Entrar com a sua conta</h1>
+            {/* get email */}
+            <label>
+              Email
+              <input
+                type="email"
+                name='email'
+                value={email}
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder='Digite o seu email'
+              />
+            </label>
+            {/* get password */}
+            <label>
+              Senha
+              <input
+                type="password"
+                name='password'
+                value={password}
+                required
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='Digite uma senha'
+              />
+            </label>
+            {msgError && <p className='message_error'>{msgError}</p>}
+            <button className='button_global'>Entrar</button>
+          </form>}
+      </div>
     </div>
   )
 }

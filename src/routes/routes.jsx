@@ -7,6 +7,7 @@ import { Register } from '../pages/register/Register';
 import  {LoginPage} from '../pages/login/Login'
 import Series from '../pages/series/Series';
 import { ViewSerie } from '../pages/series/ViewSerie';
+import { List } from '../pages/List preferences/List';
 
 export const RoutesPage = () => {
   return (
@@ -19,6 +20,7 @@ export const RoutesPage = () => {
         {/* with recursos */}
         <Route path='/series' element={<Series/>}/>
         <Route path='/viewserie/:id' element={<ViewSerie/>}/>
+        <Route path='/list' element={<List/>}/>
       </Routes>
     </BrowserRouter>
   )

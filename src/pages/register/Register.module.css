@@ -1,3 +1,4 @@
+
 .title {
     font-size: 3rem;
 }
@@ -6,6 +7,8 @@
     font-size: 18px;
 }
 
-.title, .subtitle {
+.title, 
+.subtitle {
+    color: aliceblue;
     text-align: center;
 }

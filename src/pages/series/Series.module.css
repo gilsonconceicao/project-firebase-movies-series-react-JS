@@ -13,10 +13,12 @@
 }
 
 .box_series {
+    box-shadow: 0 0 0.3em #00000018;
+    height: 440px;
+    text-align: center;
     width: 200px;
     position: relative; 
     margin: 20px;
-    padding: 10px;
 }
 
 .title_series {
@@ -59,6 +61,16 @@
    font-size: 20px;
 }
 
+.btnFavorite {
+    background-color: #ec5656;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 17px;
+    border: none;
+}
+
 
 /* view serie components */
 
@@ -87,12 +99,7 @@
 }
 
 .popularity {
-    background-color: #edf1ef;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-    width: 80px;
-    color: #101111;
+    color: #f8f8f8;
     padding: 10px;
 }
 
@@ -102,6 +109,7 @@
 }
 
 .tagline {
+    font-style: italic;
     color: #d3cdcdc2;
     font-size: 24px;
     margin: 10px 0 20px 0;
@@ -112,7 +120,7 @@
 }
 
 .reference {
-    background-color: #10e46842;
+    background-color: #0d88da8f;
     color: #f1faf5;
     padding: 10px;
     margin: 20px 0;
@@ -134,8 +142,17 @@
 }
 
 .btnViewDetals {
-    text-decoration: none;
-    color: #101111;
+    background-color: #2b2e2c;
+   color: #10e468;
+   border-radius: 2px;
+   position: absolute;
+   bottom: 0;
+   padding: 5px 7px;
+   display: block;
+   width: 93%;
+   text-align: center;
+   font-weight: bold;
+   font-size: 18px;
 }
 
 

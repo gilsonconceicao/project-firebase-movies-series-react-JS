@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {BsSearch} from 'react-icons/bs'
-//bootstrap 
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { UseAuthUserAccount } from '../../contexts/authStoreUser';
+import {RiPlayList2Fill} from 'react-icons/ri'; 
 
 import { SeriesListProvider, UseSeriesContext } from '../../contexts/seriesContext'
 
@@ -46,7 +44,7 @@ const Series = () => {
                     <input
                         type="text"
                         onChange={(e) => setSearch(e.target.value)}
-                        placeholder='Buscar por um filme'
+                        placeholder='Buscar por uma série'
                     />
                     <button className={styles.btnSearch}><BsSearch/></button>
                 </form>
@@ -64,13 +62,13 @@ const Series = () => {
         <div className={styles.container_series}>
           {listSearch.map(serie => (
             <div key={serie.id} className={styles.box_series}>
-              <Link className={styles.btnViewDetals} to={`/viewserie/${serie.id}`}>
               <img src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} alt={serie.name} />
-              <h2>{serie.name}</h2>
-
+              <h2 className={styles.titleBox}>{serie.name}</h2>
+              {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewserie/${serie.id}`}>
+                <RiPlayList2Fill/> Ver mais
+              </Link>}
               <p className={styles.numberLike}>{serie.vote_average}</p>
-              <p>{new Date(serie.first_air_date).toLocaleDateString('pt-br')}</p>
-              </Link>
+             
             </div>
           ))}
         </div>
@@ -78,23 +76,39 @@ const Series = () => {
           <div className={styles.container_series}>
           {series.map(serie => (
             <div key={serie.id} className={styles.box_series}>
-              <Link className={styles.btnViewDetals} to={`/viewserie/${serie.id}`}>
               <img src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} alt={serie.name} />
-              <h2>{serie.name}</h2>
-                
-              <p className={styles.numberLike}>{serie.vote_average}</p>
-              <p>{new Date(serie.first_air_date).toLocaleDateString('pt-br')}</p>
-              </Link>
+              <div>
+                <h2 className={styles.titleBox}>{serie.name}</h2>
+                {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewserie/${serie.id}`}>
+                  <RiPlayList2Fill/> Ver mais
+                </Link>}
+                <p className={styles.numberLike}>{serie.vote_average}</p>
+              </div>
+             
             </div>
           ))}
         </div>
         )}
 
-      {search.length > 0 ?
-       '' :
-       <a href="#updateList"><button onClick={() => setChangeList(changeList + 1)} style={{ margin: 'auto', width: '300px' }} className='button_global'>Atualizar a lista</button></a>
-      }
 
+        {
+          isLoggedAll == true ? 
+          (
+            search.length > 0 ?
+              '' :
+              <a href="#updateList">
+               <button onClick={() => setChangeList(changeList + 1)} style={{ margin: 'auto', width: '300px' }} className='button_global'>
+                 Atualizar a lista
+               </button>
+              </a>
+             
+          ) :
+          (
+            <button className='button_global'>
+                Entre ou cadastre para atualizar e ver mais
+               </button>
+          )
+        }    
       </section>
     </div>
 

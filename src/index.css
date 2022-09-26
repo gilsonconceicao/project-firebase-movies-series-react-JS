@@ -51,7 +51,7 @@ textarea {
   border-bottom: 1px solid #22222250;
   width: 100%;
   margin: 10px 0;
-  padding: 10px 0;
+  padding: 10px 3px;
 }
 
 .form_global input:focus {

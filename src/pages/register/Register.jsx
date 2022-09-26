@@ -39,72 +39,64 @@ export const Register = () => {
   return (
     <div>
       {isLogged === true ?
-        (<LoginPage/>) :
-        <section className='container'>
-          <h1 className={styles.title}>Crie um cadastro</h1>
-
-          <p className={styles.subtitle}>Tenha acesso a todos os recursos da aplicação.</p>
-
-          <form onSubmit={handleSubmitDataUser} className='form_global'>
-            {/* get name */}
-            <label>
-              Nome
-              <input
-                type="text"
-                name='displayName'
-                required
-                onChange={(e) => setName(e.target.value)}
-                placeholder='Digite o seu nome'
-              />
-            </label>
-
-            {/* get email */}
-            <label>
-              Email
-              <input
-                type="email"
-                name='email'
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder='Digite o seu email'
-              />
-            </label>
-
-            {/* get password */}
-            <label>
-              Crie uma senha
-              <input
-                type="password"
-                name='password'
-                required
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder='Digite uma senha'
-              />
-            </label>
-
-            {/* get confirmPassword */}
-            <label>
-              Confirmar senha
-              <input
-                type="password"
-                name='confirmPassword'
-                required
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder='Confirme a sua senha'
-              />
-            </label>
-
-            {msgError && <p className='message_error'>{msgError}</p>}
-
-            {loading &&
-              <p className='loading'>Carregando...</p>
-            }
-
-            <button className='button_global'>Cadastrar usuário</button>
-
-          </form>
-
-        </section>
+        (<LoginPage />) :
+        <div className={styles.container_register}>
+          <section className='container'>
+            <h1 className={styles.title}>Crie um cadastro</h1>
+            <p className={styles.subtitle}>Tenha acesso a todos os recursos da aplicação.</p>
+            <form onSubmit={handleSubmitDataUser} className='form_global'>
+              {/* get name */}
+              <label>
+                Nome
+                <input
+                  type="text"
+                  name='displayName'
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder='Digite o seu nome'
+                />
+              </label>
+              {/* get email */}
+              <label>
+                Email
+                <input
+                  type="email"
+                  name='email'
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder='Digite o seu email'
+                />
+              </label>
+              {/* get password */}
+              <label>
+                Crie uma senha
+                <input
+                  type="password"
+                  name='password'
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder='Digite uma senha'
+                />
+              </label>
+              {/* get confirmPassword */}
+              <label>
+                Confirmar senha
+                <input
+                  type="password"
+                  name='confirmPassword'
+                  required
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder='Confirme a sua senha'
+                />
+              </label>
+              {msgError && <p className='message_error'>{msgError}</p>}
+              {loading &&
+                <p className='loading'>Carregando...</p>
+              }
+              <button className='button_global'>Cadastrar usuário</button>
+            </form>
+          </section>
+        </div>
       }
     </div>
   )

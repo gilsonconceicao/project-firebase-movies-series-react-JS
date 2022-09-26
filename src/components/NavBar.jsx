@@ -8,7 +8,7 @@ import { UseAuthUserAccount } from '../contexts/authStoreUser';
 
 export const NavBar = () => {
 
-  const { isLogged, isLoggedAll } = UseAuthUserAccount()
+  const { isLogged, isLoggedAll } = UseAuthUserAccount();
 
   return (
     <nav className={styles['navbar']}>
@@ -22,7 +22,7 @@ export const NavBar = () => {
               <NavLink className={({ isActive }) =>
                 (isActive ? styles.active : styles.isNot)} to='/movies'>Movies</NavLink >
               <NavLink className={({ isActive }) =>
-                (isActive ? styles.active : styles.isNot)} to='/programmer'>About me</NavLink >
+                (isActive ? styles.active : styles.isNot)} to='/list'>my list</NavLink >
             </li>
           </ul> :
           <ul className={styles['list_link_nav']}>
