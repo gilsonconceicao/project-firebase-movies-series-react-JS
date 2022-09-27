@@ -16,7 +16,7 @@ const Movies = () => {
   const { isLoggedAll } = UseAuthUserAccount();
 
   // function of search tv
-  const url = `https://api.themoviedb.org/3/search/movie/popular?api_key=6faa5e90a21586090d2be6f3b012f543&language=en-US&page=1&query=${search}`;
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=6faa5e90a21586090d2be6f3b012f543&language=en-US&page=1&query=${search}`;
 
   const handleGetMovieSearch = async (e) => {
     e.preventDefault(); 
@@ -60,11 +60,11 @@ const Movies = () => {
         {search.length > 0 ? 
         (
         <div className={styles.container_series}>
-          {listSearch.map(movie => (
+           {listSearch.map(movie => (
             <div key={movie.id} className={styles.box_series}>
-              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.name} />
+              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
               <h2 className={styles.titleBox}>{movie.title}</h2>
-              {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewmovie/${movie.id}`}>
+              {isLoggedAll && <Link className={styles.btnViewDetals} to={`/viewserie/${movie.id}`}>
                 <RiPlayList2Fill/> Ver mais
               </Link>}
               <p className={styles.numberLike}>{movie.vote_average}</p>
