@@ -7,7 +7,7 @@ import './List.css'
 export const List = () => {
     const serie = JSON.parse(localStorage.getItem('serieSave'));
     const movies = JSON.parse(localStorage.getItem('moviesSave'));
-
+ 
     console.log(serie);
 
     const handleRemoveItem = () => {

@@ -17,7 +17,7 @@
     height: 440px;
     text-align: center;
     width: 200px;
-    position: relative; 
+    position: relative;
     margin: 20px;
 }
 
@@ -47,18 +47,18 @@
 }
 
 .numberLike {
-   background-color: #10e468;
-   color: #1b1b1b;
-   filter: drop-shadow(0 0 10px #17181879);
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 30px;
-   border-radius: 50%;
-   padding: 10px;
-   text-align: center;
-   font-weight: bold;
-   font-size: 20px;
+    background-color: #10e468;
+    color: #1b1b1b;
+    filter: drop-shadow(0 0 10px #17181879);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .btnFavorite {
@@ -104,7 +104,7 @@
 }
 
 .overview {
-    font-size: 20px; 
+    font-size: 20px;
     padding: 10px 0;
 }
 
@@ -131,7 +131,7 @@
     background: none;
     border: none;
     font-size: 1.2em;
-    margin: 0 10px ;
+    margin: 0 10px;
 }
 
 .btnBack {
@@ -143,16 +143,16 @@
 
 .btnViewDetals {
     background-color: #2b2e2c;
-   color: #10e468;
-   border-radius: 2px;
-   position: absolute;
-   bottom: 0;
-   padding: 5px 7px;
-   display: block;
-   width: 93%;
-   text-align: center;
-   font-weight: bold;
-   font-size: 18px;
+    color: #10e468;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    padding: 5px 7px;
+    display: block;
+    width: 93%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 
@@ -166,7 +166,7 @@
         height: 100%;
     }
 
-    
+
     .container_view h3 {
         font-size: 2em;
     }
@@ -177,5 +177,9 @@
         width: 100%;
         height: 600px;
     }
-    
+
+    .box_series {
+        width: 250px;
+    }
+
 }
