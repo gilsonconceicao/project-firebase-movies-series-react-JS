@@ -5,8 +5,6 @@ import { LoginPage } from '../login/Login';
 import { UseAuthUserAccount } from '../../contexts/authStoreUser';
 //style
 import styles from './Register.module.css';
-import { Link } from 'react-router-dom';
-import { async } from '@firebase/util';
 
 export const Register = () => {
   //state

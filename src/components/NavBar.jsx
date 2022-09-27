@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiFillGitlab, AiOutlineMenu } from 'react-icons/ai'
-import { BiUserCircle } from 'react-icons/bi'
-import {AiOutlineLogin} from 'react-icons/ai'
+import { AiFillGitlab, AiOutlineMenu } from 'react-icons/ai';
+import { BiUserCircle } from 'react-icons/bi';
+import {AiOutlineLogin} from 'react-icons/ai';
 
 import styles from './NavBar.module.css';
 import { UseAuthUserAccount } from '../contexts/authStoreUser';
